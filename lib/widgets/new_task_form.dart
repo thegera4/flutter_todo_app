@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/models/task_data.dart';
-import '../models/task.dart';
+import 'package:provider/provider.dart';
 
 class TaskForm extends StatefulWidget {
   const TaskForm({super.key});
@@ -10,7 +10,6 @@ class TaskForm extends StatefulWidget {
 }
 
 class _TaskFormState extends State<TaskForm> {
-
   final _formKey = GlobalKey<FormState>();
   late String _taskTitle;
 
@@ -26,7 +25,7 @@ class _TaskFormState extends State<TaskForm> {
               textAlign: TextAlign.center,
               onChanged: (value) => _taskTitle = value,
               validator: (value) {
-                if (value == null || value.isEmpty) {
+                if (value == null || value.isEmpty || value.trim().isEmpty) {
                   return 'Please type something first...';
                 }
                 return null;
@@ -36,13 +35,11 @@ class _TaskFormState extends State<TaskForm> {
             ElevatedButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  tasks.add(Task(name: _taskTitle));
+                  Provider.of<Data>(context, listen: false).addTask(_taskTitle);
                   Navigator.pop(context, _taskTitle);
                 }
               },
-              style: ButtonStyle(
-                backgroundColor: WidgetStateProperty.all(Colors.indigo),
-              ),
+              style: ButtonStyle(backgroundColor: WidgetStateProperty.all(Colors.indigo),),
               child: const Text('Add', style: TextStyle(color: Colors.white),),
             ),
           ],

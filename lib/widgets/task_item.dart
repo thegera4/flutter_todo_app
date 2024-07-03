@@ -6,11 +6,13 @@ class TaskItem extends StatelessWidget {
     required this.taskTitle,
     required this.isChecked,
     required this.checkboxCallback,
+    required this.longPressCallback,
   });
 
   final String taskTitle;
   final bool isChecked;
   final Function checkboxCallback;
+  final Function longPressCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +25,7 @@ class TaskItem extends StatelessWidget {
         value: isChecked,
         onChanged: (value) => checkboxCallback(value),
       ),
+      onLongPress: () => longPressCallback(),
     );
   }
 }

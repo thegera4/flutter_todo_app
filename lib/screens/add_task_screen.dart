@@ -6,7 +6,6 @@ class AddTaskScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return SingleChildScrollView(// these 2 widgets, ensure the keyboard doesn't
       child: Container( // cover the bottom sheet content in smaller devices
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
