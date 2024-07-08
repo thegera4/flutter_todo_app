@@ -1,16 +1,14 @@
-# flutter_todo_app
+# Todoey (TODO app)
 
-Todo app using the provider package
+Todo app made with flutter and using the provider package (for state management)
 
-## Getting Started
+## Add task
+Click the Floating Action Button and add a new task on a Bottom Sheet widget.
 
-This project is a starting point for a Flutter application.
+![add_task](https://github.com/thegera4/flutter_todo_app/assets/84020433/997f9212-1a49-4700-bb09-f87c7db078df)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Delete task
+If you long tap the task, it will be deleted.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![delete_task](https://github.com/thegera4/flutter_todo_app/assets/84020433/8b7dd9cb-7842-465d-8c2f-e052e45ea485)
